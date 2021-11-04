@@ -14,7 +14,7 @@ variable "location" {
 # victim vpc cidr
 variable "victim-network-vpc-cidr" {
   type        = string
-  description = "VPC"
+  description = "VPC CIDR Block"
   default     = "10.20.0.0/16"
 }
 
