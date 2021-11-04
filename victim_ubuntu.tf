@@ -1,3 +1,16 @@
+#Variable Processing
+# Setup the userdata that will be used for the instance
+data "template_file" "userdata_setup" {
+  template = "${file("userdata_setup.template")}"
+
+  vars  = {
+    name       = "${var.username}"
+    token     = "${var.token}"
+    logic = "${file("vuln_bootstrap.sh")}"
+  }
+}
+
+#Create Security Group Ingress-Egress
 resource "aws_security_group" "appsec" {
   name        = "appsec-sg"
   description = "Allow web traffics"
