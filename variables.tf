@@ -32,6 +32,13 @@ variable "internal-private-ip" {
   default     = "10.20.0.10"
 }
 
+variable "private-subnet-1-cidr" {
+  default       = "10.0.2.0/24"
+  description   = "Private Subnet 1 CIDR Block"
+  type          = string
+}
+
+
 # environment
 variable "environment" {
   type        = string
