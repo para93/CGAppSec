@@ -1,10 +1,12 @@
-# Create a resource group for victim network
-resource "azurerm_resource_group" "victim-network-rg" {
-  name     = "${var.victim_company}-rg"
-  location = var.location
-  tags = {
-    application = var.victim_company
-    environment = var.environment
+# Create VPC
+# terraform aws create vpc
+resource "aws_vpc" "vpc" {
+  cidr_block              = 
+  instance_tenancy        = 
+  enable_dns_hostnames    = 
+
+  tags      = {
+    Name    = 
   }
 }
 
