@@ -1,12 +1,12 @@
 # Create VPC
 # terraform aws create vpc
 resource "aws_vpc" "vpc" {
-  cidr_block              = "$
-  instance_tenancy        = 
-  enable_dns_hostnames    = 
+  cidr_block              = "${var.victim-network-vpc-cidr}"
+  instance_tenancy        = "default"
+  enable_dns_hostnames    = true
 
   tags      = {
-    Name    = 
+    Name    = "AppSec VPC"
   }
 }
 
