@@ -5,7 +5,7 @@ variable "victim_company" {
 }
 
 # aws region
-Get-variable "location" {
+variable "location" {
   type        = string
   description = "AWS region where the resources will be created"
   default     = "us-east-2"
