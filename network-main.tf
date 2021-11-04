@@ -33,6 +33,19 @@ resource "aws_subnet" "public-subnet-1" {
   }
 }
 
+# Create Public Subnet 2
+# terraform aws create subnet
+resource "aws_subnet" "public-subnet-2" {
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = 
+  availability_zone       = 
+  map_public_ip_on_launch = 
+
+  tags      = {
+    Name    = 
+  }
+}
+
 
 # Create the victim network VPC
 resource "azurerm_virtual_network" "victim-network-vpc" {
