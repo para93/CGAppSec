@@ -42,3 +42,15 @@ EOT
 sudo service nginx restart
 sleep 2
 sudo nginx -s reload
+
+# Download the CPnanoAgent
+until curl \
+    --output /home/$name/cp-nano-egg.sh \
+    --url https://cp-nano-agent-latest.s3.us-east-2.amazonaws.com/cp-nano-egg.sh ; do
+    sleep 1
+done
+
+# Install CP Nano Agent
+sudo chmod 755 /home/$name/cp-nano-egg.sh
+sleep 1
+sudo /home/$name/cp-nano-egg.sh --install --ignore accessControl --token $token 
