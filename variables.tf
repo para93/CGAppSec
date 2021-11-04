@@ -4,60 +4,34 @@ variable "victim_company" {
   description = "Victim Company used in Naming Convention"
 }
 
-# aws region
-Get-variable "location" {
+# azure region
+variable "location" {
   type        = string
-  description = "AWS region where the resources will be created"
-  default     = "us-east-2"
+  description = "Azure region where the resources will be created"
+  default     = "West US 2"
 }
 
-# victim vpc cidr block
-variable "victim-network-vpc-cidr" {
+# victim vnet cidr
+variable "victim-network-vnet-cidr" {
   type        = string
-  description = "VPC CIDR Block"
-  default     = "10.0.0.0/16"
-  
-# victim vpc ipv6 cidr block
-variable "victim-network-vpc-cidr-ipv6" {
+  description = "VNET"
+  default     = "10.20.0.0/16"
+}
+
+# victim vnet cidr
+variable "victim-network-subnet-cidr" {
   type        = string
-  description = "VPC CIDR Block"
-  default     = "::/0"
+  description = "Subnet"
+  default     = "10.20.0.0/24"
+}
 
-# victim vpc cidr AWS public subnet
-variable "public-subnet-1-cidr" {
+# SC_EXT private ip
+variable "internal-private-ip" {
   type        = string
-  description = "Public Subnet 1 CIDR Block"
-  default     = "10.0.0.0/24"
+  description = "Subnet"
+  default     = "10.20.0.10"
 }
 
-variable "public-subnet-2-cidr" {
-  default       = "10.0.1.0/24"
-  description   = "Public Subnet 2 CIDR Block"
-  type          = string
-}
-variable "private-subnet-1-cidr" {
-  default       = "10.0.2.0/24"
-  description   = "Private Subnet 1 CIDR Block"
-  type          = string
-}
-
-variable "private-subnet-2-cidr" {
-  default       = "10.0.3.0/24"
-  description   = "Private Subnet 2 CIDR Block"
-  type          = string
-}
-
-variable "private-subnet-3-cidr" {
-  default       = "10.0.4.0/24"
-  description   = "Private Subnet 3 CIDR Block"
-  type          = string
-}
-
-variable "private-subnet-4-cidr" {
-  default       = "10.0.5.0/24"
-  description   = "Private Subnet 4 CIDR Block"
-  type          = string
-}
 # environment
 variable "environment" {
   type        = string
@@ -76,16 +50,18 @@ variable "vulnvm-name" {
 variable "username" {
   type        = string
   description = "Username"
+  default     = "Badboy"
 }
 
 # password
 variable "password" {
   type        = string
   description = "Password"
+  default     = "Cisco123!@"
 }
 
 # token
 variable "token" {
   type        = string
-  description = "WAAP Token"
+  description = "WAAP token"
 }
