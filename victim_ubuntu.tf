@@ -1,18 +1,16 @@
-# Create Security Group to access web
-
-resource "aws_security_group" "allow_http_ssh" {
-  name        = "allow_http_ssh"
-  description = "Allow http_ssh inbound traffic"
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
+  description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.vpc.id
-  
+
   ingress = [
     {
-      description      = "http_ssh to VPC"
+      description      = "TLS from VPC"
       from_port        = 443
       to_port          = 443
       protocol         = "tcp"
-      cidr_blocks      = "$[var.victim-network-vpc-cidr]"
-      ipv6_cidr_blocks = "$[var.victim-network-vpc-cidr-ipv6]"
+      cidr_blocks      = [victim-network-vpc-cidr]
+      ipv6_cidr_blocks = [victim-network-vpc-cidr-ipv6]
     }
   ]
 
@@ -27,8 +25,6 @@ resource "aws_security_group" "allow_http_ssh" {
   ]
 
   tags = {
-    Name = "allow_http_ssh"
+    Name = "allow_tls"
   }
 }
-
- 
