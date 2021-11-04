@@ -31,7 +31,7 @@ resource "aws_subnet" "public-subnet-1" {
   map_public_ip_on_launch = true
 
   tags      = {
-    Name    = AppSec Public Subnet
+    Name    = "AppSec Public Subnet"
   }
 }
 
