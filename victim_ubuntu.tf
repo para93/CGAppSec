@@ -11,7 +11,7 @@ resource "aws_security_group" "allow_http_ssh" {
       from_port        = 443
       to_port          = 443
       protocol         = "tcp"
-      cidr_blocks      = [victim-network-vpc-cidr]
+      cidr_blocks      = "$[var.victim-network-vpc-cidr]"
       ipv6_cidr_blocks = [victim-network-vpc-cidr]
     }
   ]
