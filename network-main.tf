@@ -105,7 +105,7 @@ resource "aws_subnet" "private-subnet-2" {
 # terraform aws create subnet
 resource "aws_subnet" "private-subnet-3" {
   vpc_id                   = aws_vpc.vpc.id
-  cidr_block               = 
+  cidr_block               = "${var.private-subnet-3-cidr}"
   availability_zone        = "
   map_public_ip_on_launch  = false
 
@@ -118,7 +118,7 @@ resource "aws_subnet" "private-subnet-3" {
 # terraform aws create subnet
 resource "aws_subnet" "private-subnet-4" {
   vpc_id                   = aws_vpc.vpc.id
-  cidr_block               = 
+  cidr_block               = "${var.private-subnet-4-cidr}"
   availability_zone        =
   map_public_ip_on_launch  = false
 
