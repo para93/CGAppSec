@@ -1,7 +1,7 @@
 # Create VPC
 # terraform aws create vpc
 resource "aws_vpc" "vpc" {
-  cidr_block              = 
+  cidr_block              = "$
   instance_tenancy        = 
   enable_dns_hostnames    = 
 
