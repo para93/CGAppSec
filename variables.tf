@@ -11,24 +11,24 @@ variable "location" {
   default     = "us-east-2"
 }
 
-# victim vpc cidr
+# victim vpc cidr block
 variable "victim-network-vpc-cidr" {
   type        = string
   description = "VPC CIDR Block"
   default     = "10.20.0.0/16"
 }
 
-# victim vpc cidr
+# victim vpc cidr AWS public subnet
 variable "victim-network-subnet-cidr" {
   type        = string
-  description = "Subnet"
+  description = "Public Subnet"
   default     = "10.20.0.0/24"
 }
 
 # SC_EXT private ip
 variable "internal-private-ip" {
   type        = string
-  description = "Subnet"
+  description = "Private Subnet"
   default     = "10.20.0.10"
 }
 
