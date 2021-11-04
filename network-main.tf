@@ -78,7 +78,7 @@ resource "aws_route_table_association" "public-subnet-2-route-table-association"
 # Create Private Subnet 1
 # terraform aws create subnet
 resource "aws_subnet" "private-subnet-1" {
-  vpc_id                   = 
+  vpc_id                   = aws_vpc.vpc.id
   cidr_block               = 
   availability_zone        = 
   map_public_ip_on_launch  = 
