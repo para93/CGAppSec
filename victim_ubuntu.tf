@@ -11,9 +11,8 @@ resource "aws_security_group" "allow_http_ssh" {
       to_port          = 80
       protocol         = "tcp"
       cidr_blocks      = [victim-network-vpc-cidr]
-    },
     
-    ingress = {
+  ingress = {
       description      = "ssh to VPC"
       from_port        = 22
       to_port          = 22
