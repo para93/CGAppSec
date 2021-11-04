@@ -37,12 +37,12 @@ resource "aws_subnet" "public-subnet-1" {
 # terraform aws create subnet
 resource "aws_subnet" "public-subnet-2" {
   vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = 
-  availability_zone       = 
-  map_public_ip_on_launch = 
+  cidr_block              = "${var.internal-private-ip}"
+  availability_zone       = "us-east-2b"
+  map_public_ip_on_launch = true
 
   tags      = {
-    Name    = 
+    Name    = "Public Subnet 2"
   }
 }
 
