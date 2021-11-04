@@ -24,7 +24,7 @@ resource "aws_internet_gateway" "internet-gateway" {
 # terraform aws create subnet
 resource "aws_subnet" "public-subnet-1" {
   vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = "${var.victim-network-subnet-cidr}"
+  cidr_block              = "${var.public-subnet-1-cidr}"
   availability_zone       = "us-east-2a"
   map_public_ip_on_launch = true
 
@@ -37,7 +37,7 @@ resource "aws_subnet" "public-subnet-1" {
 # terraform aws create subnet
 resource "aws_subnet" "public-subnet-2" {
   vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = "${var.internal-private-ip}"
+  cidr_block              = "${var.public-subnet-2-cidr}"
   availability_zone       = "us-east-2b"
   map_public_ip_on_launch = true
 
@@ -106,11 +106,11 @@ resource "aws_subnet" "private-subnet-2" {
 resource "aws_subnet" "private-subnet-3" {
   vpc_id                   = aws_vpc.vpc.id
   cidr_block               = "${var.private-subnet-3-cidr}"
-  availability_zone        = "
+  availability_zone        = "us-east-2a"
   map_public_ip_on_launch  = false
 
   tags      = {
-    Name    = "Private Subnet 3"
+    Name    = "Private Subnet 3 | Database Tier"
   }
 }
 
@@ -119,20 +119,13 @@ resource "aws_subnet" "private-subnet-3" {
 resource "aws_subnet" "private-subnet-4" {
   vpc_id                   = aws_vpc.vpc.id
   cidr_block               = "${var.private-subnet-4-cidr}"
-  availability_zone        =
+  availability_zone        = "us-east-2b"
   map_public_ip_on_launch  = false
 
   tags      = {
-    Name    = "Private Subnet 4"
+    Name    = "Private Subnet 4 | Database Tier"
   }
 }
-
-
-
-
-
-
-
 
 # Create the victim network VPC
 resource "azurerm_virtual_network" "victim-network-vpc" {
