@@ -16,6 +16,12 @@ variable "victim-network-vpc-cidr" {
   type        = string
   description = "VPC CIDR Block"
   default     = "10.0.0.0/16"
+  
+# victim vpc ipv6 cidr block
+variable "victim-network-vpc-cidr-ipv6" {
+  type        = string
+  description = "VPC CIDR Block"
+  default     = "::/0"
 
 # victim vpc cidr AWS public subnet
 variable "public-subnet-1-cidr" {
@@ -83,3 +89,5 @@ variable "token" {
   type        = string
   description = "WAAP Token"
 }
+  
+]  
