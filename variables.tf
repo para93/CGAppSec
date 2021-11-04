@@ -38,6 +38,12 @@ variable "private-subnet-1-cidr" {
   type          = string
 }
 
+variable "private-subnet-2-cidr" {
+  default       = "10.0.3.0/24"
+  description   = "Private Subnet 2 CIDR Block"
+  type          = string
+}
+
 
 # environment
 variable "environment" {
