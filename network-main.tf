@@ -24,12 +24,12 @@ resource "aws_internet_gateway" "internet-gateway" {
 # terraform aws create subnet
 resource "aws_subnet" "public-subnet-1" {
   vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = 
-  availability_zone       = 
-  map_public_ip_on_launch = 
+  cidr_block              = "${var.victim-network-subnet-cidr}"
+  availability_zone       = "us-east-2a"
+  map_public_ip_on_launch = true
 
   tags      = {
-    Name    = 
+    Name    = AppSec Public Subnet
   }
 }
 
