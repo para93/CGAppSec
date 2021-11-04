@@ -7,12 +7,12 @@ resource "aws_security_group" "allow_http_ssh" {
   
   ingress = [
     {
-      description      = "TLS from VPC"
-      from_port        = 443
+      description      = "http_ssh to VPC"
+      from_port        = 22
       to_port          = 443
       protocol         = "tcp"
       cidr_blocks      = "$[var.victim-network-vpc-cidr]"
-      ipv6_cidr_blocks = [victim-network-vpc-cidr]
+      ipv6_cidr_blocks = "$[victim-network-vpc-cidr-ipv6]"
     }
   ]
 
@@ -27,7 +27,7 @@ resource "aws_security_group" "allow_http_ssh" {
   ]
 
   tags = {
-    Name = "allow_tls"
+    Name = "allow_http_ssh"
   }
 }
 
