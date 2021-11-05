@@ -31,7 +31,7 @@ resource "aws_nat_gateway" "appsec-nat-gateway-1" {
 
 # Create Nat Gateway 2 in Public Subnet 2
 # terraform create aws nat gateway
-resource "aws_nat_gateway" "nat-gateway-2" {
+resource "aws_nat_gateway" "appsec-nat-gateway-2" {
   allocation_id = aws_eip.eip-for-appsec-nat-gateway-2.id
   subnet_id     = aws_subnet.public-subnet-2.id
 
