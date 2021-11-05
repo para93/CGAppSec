@@ -1,5 +1,5 @@
 resource "aws_instance" "juice-shop" {
-  ami           = "ami-09504fb0a86d17274"
+  ami           = "ami-0629230e074c580f2"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public-subnet-1.id
   associate_public_ip_address = true
