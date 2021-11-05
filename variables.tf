@@ -60,6 +60,12 @@ variable "private-subnet-4-cidr" {
   description   = "Private Subnet 4 CIDR Block"
   type          = string
 }
+
+variable "ssh-location" {
+  default       = "0.0.0.0/0"
+  description   = "IP Address that can SSH into the Bastion"
+  type          = string
+}
 # environment
 variable "environment" {
   type        = string
