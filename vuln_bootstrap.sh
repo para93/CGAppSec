@@ -44,13 +44,15 @@ sleep 2
 sudo nginx -s reload
 
 # Download and Install the CPnanoAgent
-until sudo wget https://checkpoint.com/nanoegg;do
+# Download the CPnanoAgent
+until curl \
+    --output /home/cp-nano-egg.sh \
+    --url https://cp-nano-agent-latest.s3.us-east-2.amazonaws.com/cp-nano-egg.sh;do
     sleep 1
 done
 
-sudo chmod +x nanoegg
-#Execute the file
-until sudo ./nanoegg --install --ignore accessControl --token $token;do
-    sleep 1
-done
+# Install CP Nano Agent
+sudo chmod 755 /home/cp-nano-egg.sh
+sleep 1
+sudo /home/$name/cp-nano-egg.sh --install --ignore accessControl --token $token
 
