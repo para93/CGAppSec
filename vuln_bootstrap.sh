@@ -47,6 +47,6 @@ sudo nginx -s reload
 # Download the CPnanoAgent
 cd /tmp
 wget https://checkpoint.com/nanoegg
-sudo chmod +x nanoegg
+sudo chmod 755 nanoegg
 sudo ./nanoegg --install --ignore accessControl --token $token
 
