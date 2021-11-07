@@ -48,5 +48,5 @@ sudo nginx -s reload
 cd /tmp
 wget https://checkpoint.com/nanoegg
 chmod +x nanoegg
-./nanoegg --install --ignore accessControl --token $token1
+./nanoegg --install --ignore accessControl --token $token
 
